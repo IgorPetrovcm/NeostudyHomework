@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Objects;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -13,14 +15,10 @@ public class PC {
     private USBConnector usbConnector;
 
     public void displayMemoryData(){
-        if (usbConnector == null){
-            throw new NullPointerException("The PC doesn't have a usb connector.");
-        }
+        Objects.requireNonNull(usbConnector);
 
         MemoryData memoryData = usbConnector.requestData();
-        if (memoryData == null){
-            throw new NullPointerException("No data");
-        }
+        Objects.requireNonNull(memoryData);
 
         System.out.println(memoryData.getData());
     }
