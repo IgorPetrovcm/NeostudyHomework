@@ -4,7 +4,7 @@ import java.lang.reflect.Proxy;
 
 public class App
 {
-    private static final NeoDBClient client = new NeoDBClient("mydb");
+    private static final NeoDBClient client = new NeoDBClient();
 
     public static void main( String[] args ){
         DBClient proxyClient = (DBClient) Proxy.newProxyInstance(
@@ -13,6 +13,6 @@ public class App
                 new ProxyDBClient(client)
         );
 
-        System.out.println(proxyClient.connect());
+        System.out.println(proxyClient.connect("neodb"));
     }
 }
