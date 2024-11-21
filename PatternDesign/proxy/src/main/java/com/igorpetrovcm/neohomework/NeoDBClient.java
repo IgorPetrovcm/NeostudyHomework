@@ -8,10 +8,9 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class NeoDBClient implements DBClient {
-    private final String dbName;
 
     @Override
-    public String connect(){
+    public String connect(String dbName){
         return dbName;
     }
 }
