@@ -8,7 +8,6 @@ public class App
         for (int i = 0; i < 100; i++){
             logging = Logging.getInstance();
             logging.classInfo(App.class, "Case " + i);
-            // Refactor pisal dolbaeb 100% prosto mraz<<!!!!!
         }
     }
 }
