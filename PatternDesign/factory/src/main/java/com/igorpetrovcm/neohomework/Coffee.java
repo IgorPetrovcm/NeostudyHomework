@@ -1,10 +1,14 @@
 package com.igorpetrovcm.neohomework;
 
-public class Coffee {
+public abstract class Coffee {
     private String name;
 
     public Coffee(String name){
         this.name = name;
+    }
+
+    public String getName(){
+        return name;
     }
 
     @Override

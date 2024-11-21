@@ -3,9 +3,9 @@ package com.igorpetrovcm.neohomework;
 public class App
 {
     public static void main( String[] args ){
-        EspressoFactory espressoFactory = new EspressoFactory();
+        Cafe cafe = new Cafe();
 
-        espressoFactory.cupOfCoffee();
-
+        cafe.cupOfCoffee(CoffeeType.AMERICANO);
+        cafe.cupOfCoffee(CoffeeType.ESPRESSO);
     }
 }

@@ -1,11 +1,17 @@
 package com.igorpetrovcm.neohomework;
 
-public abstract class CoffeeFactory {
-    public void cupOfCoffee(){
-        Coffee coffee = makeCoffee();
+public class CoffeeFactory {
+    public static Coffee pickCoffee(CoffeeType coffeeType){
+        Coffee coffee;
 
-        System.out.println(coffee.toString());
+        switch (coffeeType){
+            case ESPRESSO: coffee = new Espresso();
+            break;
+            case AMERICANO: coffee = new Americano();
+            break;
+            default: throw new IllegalArgumentException();
+        }
+
+        return coffee;
     }
-
-    protected abstract Coffee makeCoffee();
 }
